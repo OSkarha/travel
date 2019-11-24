@@ -401,7 +401,10 @@ h3 {
     text-align: center; }
   .section__about {
     background: #3e3b3a;
-    background-image: url(../img/bg.jpg); }
+    background-image: url(../img/bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; }
 
 .search-form {
   margin: 50px;
@@ -502,10 +505,7 @@ input[type="search"]::-webkit-search-results-decoration {
   align-items: center; }
 
 .btn {
-  height: 55px;
-  width: 20%;
-  position: absolute;
-  right: 0;
+  width: 225px;
   text-transform: uppercase;
   background: #5474fd;
   color: #e8e8e8;
@@ -513,21 +513,23 @@ input[type="search"]::-webkit-search-results-decoration {
   font-size: 1.4rem;
   font-weight: 400;
   line-height: 1.6;
-  border: 2px solid #e8e8e8;
-  cursor: pointer; }
-  .btn--large {
-    width: 225px;
-    text-transform: uppercase;
-    background: #5474fd;
-    color: #e8e8e8;
-    font-family: "Aleo";
-    font-size: 1.4rem;
-    font-weight: 400;
-    line-height: 1.6;
+  cursor: pointer;
+  padding: 15px;
+  text-align: center;
+  margin: 30px 0;
+  -webkit-transition: all .4s ease-in;
+  -o-transition: all .4s ease-in;
+  transition: all .4s ease-in; }
+  .btn:hover, .btn:focus, .btn:active {
+    background: #e95e5e; }
+  .btn--small {
+    height: 55px;
+    width: 20%;
+    position: absolute;
+    right: 0;
+    border: 2px solid #e8e8e8;
     cursor: pointer;
-    padding: 15px;
-    text-align: center;
-    margin: 30px 0; }
+    margin: 0; }
   .btn svg {
     margin-left: 10px;
     vertical-align: middle; }
@@ -563,9 +565,12 @@ input[type="search"]::-webkit-search-results-decoration {
   min-height: 680px;
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
   .about__text {
-    margin: auto;
+    margin: auto 0;
     width: 45%; }
   .about__par {
     color: #e8e8e8;
@@ -587,7 +592,8 @@ input[type="search"]::-webkit-search-results-decoration {
     .about__img-1 {
       text-align: left; }
     .about__img-2 {
-      text-align: right; }
+      text-align: right;
+      margin: 0; }
 
 .section-svg {
   min-height: 330px;
@@ -595,8 +601,9 @@ input[type="search"]::-webkit-search-results-decoration {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   text-align: center; }
   .section-svg__figure {
     margin: auto;
