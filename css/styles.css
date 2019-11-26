@@ -562,7 +562,6 @@ input[type="search"]::-webkit-search-results-decoration {
   flex-direction: column; }
 
 .about {
-  min-height: 680px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -580,7 +579,7 @@ input[type="search"]::-webkit-search-results-decoration {
     line-height: 1.5;
     text-align: left; }
   .about__img {
-    margin: auto;
+    padding: 100px 0;
     width: 50%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -618,7 +617,6 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .spain {
   background-image: url(../img/bg2.jpg);
-  min-height: 700px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -640,7 +638,8 @@ input[type="search"]::-webkit-search-results-decoration {
   width: 50%;
   text-align: left;
   padding: 45px 30px;
-  margin-top: 150px; }
+  margin-top: 150px;
+  margin-bottom: 100px; }
 
 .spain__par {
   color: #e8e8e8;
