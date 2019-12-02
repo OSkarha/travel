@@ -324,10 +324,12 @@ input[type="search"]::-webkit-search-results-decoration {
 .spain{
     &{
         background-image: url(../img/bg2.jpg);
+        @include bg 
     }
 
     &--right{
         background-image: url(../img/bg4.jpg);
+        @include bg 
     }
 
     &__text{
