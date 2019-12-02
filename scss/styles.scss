@@ -37,7 +37,6 @@ body {
     &__spain{
         display: flex;   
     justify-content: flex-start;
-
         &--right{
             display: flex;  
             justify-content: flex-end;
@@ -52,6 +51,7 @@ header{
     padding: 10px;
     padding-bottom: 11vh;
     display: flex;
+    @include bg;
 }
 
 h1{
@@ -71,6 +71,23 @@ h3{
 
 .title{
     text-transform: uppercase;
+    &--footer{
+        @include text($text-color, 'inherit', 2.4rem, 700, 1);
+        letter-spacing: 2px;
+        padding-bottom: 15px;
+    }
+}
+
+.subtitle{
+    @include text(inherit, inherit, 2.2rem, 400, 1.5);
+    letter-spacing: 7px;
+    margin:0;
+    text-align: center;
+    align-items: center;
+    &--footer{
+        @include text($text-color, 'inherit', 1.6rem, 400, 1);
+        letter-spacing: 1px;
+    }
 }
 
 .section{
@@ -167,15 +184,6 @@ input[type="search"]::-webkit-search-results-decoration {
     }
 }
 
-.subtitle{
-    @include text(inherit, inherit, 2.2rem, 400, 1.5);
-    letter-spacing: 7px;
-    margin:0;
-    text-align: center;
-    align-items: center;
-}
-
-
 .btn{
     width: 225px;
     text-transform: uppercase;
@@ -193,6 +201,7 @@ input[type="search"]::-webkit-search-results-decoration {
         height: 55px;
         width: 20%;
         position: absolute;
+        top: 0;
         right: 0;
         border: 2px solid $text-color;
         cursor: pointer;
@@ -207,11 +216,13 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 .scroll{
+    margin-top: 120px;
 & a{
     text-decoration: none;
     @include text($text-color, inherit, 1.4rem, 400, 1.5);
     transition: all .25s ease-in-out;
     fill: $text-color;
+    
     @include tr();
         @include hover{
             svg{
@@ -243,7 +254,7 @@ input[type="search"]::-webkit-search-results-decoration {
 
     &__img{
         // margin: auto;
-        padding: 100px 0;
+        padding: 120px 0;
         width: 50%;
         display: flex;
         flex-direction: column;
@@ -259,16 +270,22 @@ input[type="search"]::-webkit-search-results-decoration {
     }
 }
 
-.section-svg{
-    min-height: 330px;
+.box-svg{
+    padding: 100px 0 120px;
     background-color: #333;
-display: flex;
-justify-content: space-between;
-text-align: center;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
 
     &__figure{
          margin: auto;
         text-align: center;
+
+        & svg{
+        @include hover{
+            transform: scale(1.2);
+            }
+        }
     }
 
     &__text{
@@ -288,7 +305,7 @@ text-align: center;
         left: 50%;
         transform: translate(-50%,-30%);
         z-index: 0;
-        width: 100%;
+        width: 70%;
         background-image: url(../img/arc.svg);
         background-position: center;
         background-repeat: no-repeat;
@@ -307,7 +324,7 @@ text-align: center;
 .spain{
     &{
         background-image: url(../img/bg2.jpg);
-}
+    }
 
     &--right{
         background-image: url(../img/bg4.jpg);
@@ -318,7 +335,7 @@ text-align: center;
         width: 50%;
         text-align: left;
         padding: 45px 30px;
-        margin-top: 150px;
+        margin-top: 230px;
         margin-bottom: 100px;
         }
 
@@ -329,12 +346,75 @@ text-align: center;
 
 .quote{
 
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+
     &__subtitle{
         display: flex;
+        padding-bottom: 200px;
+        
+    }
+
+    &__title{
+        @include text($text-color, "Aleo", 3.6rem, 400, 1); 
+        padding: 120px 0 100px;
+        text-align: center;
     }
 
     &__text{
         background-color: rgba(51, 51, 51, 0.781);
+        height: 285px;
+        padding: 30px 50px 50px 50px;
     }
-  
+
+    
+
+    &__par{
+        @include text($text-color, inherit, 1.6rem, 300, 1.6); 
+        margin: 0;
+        position: relative; 
+        height: 150px;
+        overflow: hidden;
+
+        &:first-letter {
+            margin-left: 2.5rem;
+        } 
+
+        &::before { 
+            position: absolute;
+            font-family: 'FontAwesome';
+            content: '\f10d';
+            color: $accent-color;
+            top: -5px; 
+        }
+    }
+}
+
+.footer{
+    background-color: #232323;
+    padding: 120px 0 50px;
+    text-align: center;
+}
+
+.social{
+    padding: 0;
+    margin: 30px 0 0;
+    &__icon {
+        display: inline-block;
+        padding: 0 8px;
+        text-decoration: none;
+        @include hover{
+            transform: scale(1.2);
+        }
+        & a{
+            color: $text-color;
+            @include hover{
+                color: $accent-color;
+            }
+        }
+        &--active a{
+            color: $accent-color;
+        }
+    }
 }
